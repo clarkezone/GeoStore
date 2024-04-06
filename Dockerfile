@@ -2,12 +2,13 @@ FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 ARG TARGETARCH
 
-WORKDIR /src
+# in the image
+WORKDIR /source
 
 # copy csproj and restore as distinct layers
-COPY GeoStore.sln .
+COPY /src/GeoStore.sln .
 # dest folders aren't created automatically
-RUN mkdir GeoStore.Core
+RUN mkdir /src/GeoStore.Core
 RUN mkdir GeoStore.Service
 RUN mkdir GeoStore.Tests
 COPY GeoStore.Core/*.csproj GeoStore.Core/.
