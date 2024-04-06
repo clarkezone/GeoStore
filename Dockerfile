@@ -6,7 +6,7 @@ ARG TARGETARCH
 WORKDIR /source
 
 # copy csproj and restore as distinct layers
-COPY /src/GeoStore.sln .
+COPY GeoStore.sln .
 # dest folders aren't created automatically
 RUN mkdir /source/GeoStore.Core
 RUN mkdir /source/GeoStore.Service
