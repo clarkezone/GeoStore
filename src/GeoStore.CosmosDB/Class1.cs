@@ -26,11 +26,5 @@ public class SimpleStorageProvider : IStorageProvider
 
     public void WriteRecords(RootObject points)
     {
-        // Here you would implement the logic to write the points to the storage.
-        // This example simply prints the points to the console for demonstration.
-        foreach (var point in points)
-        {
-            Console.WriteLine($"Writing point: ({point.X}, {point.Y})");
-        }
     }
 }
