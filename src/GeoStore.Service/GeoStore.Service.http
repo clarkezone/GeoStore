@@ -1,11 +1,6 @@
-@GeoStore.Service_HostAddress = http://localhost:5083
+@GeoStore.Service_HostAddress = http://localhost:5073
 
-GET {{GeoStore.Service_HostAddress}}/todos/
-Accept: application/json
-
-###
-
-GET {{GeoStore.Service_HostAddress}}/todos/1
+GET {{GeoStore.Service_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
