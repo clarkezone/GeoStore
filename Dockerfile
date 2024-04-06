@@ -11,8 +11,8 @@ RUN mkdir GeoStore.Core
 RUN mkdir GeoStore.Service
 RUN mkdir GeoStore.Tests
 COPY GeoStore.Core/*.csproj GeoStore.Core/.
-COPY GetStore.Service/*.csproj GeoStore.Service/. 
-COPY pocketnow.Tests/*.csproj GeoStore.Tests/.
+COPY GeoStore.Service/*.csproj GeoStore.Service/. 
+COPY GeoStore.Tests/*.csproj GeoStore.Tests/.
 # verify things are where expected
 #RUN ls -al
 #RUN ls -al pocketnow.lib
