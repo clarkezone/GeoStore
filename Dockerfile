@@ -11,9 +11,11 @@ COPY /src/GeoStore.sln .
 RUN mkdir /source/GeoStore.Core
 RUN mkdir /source/GeoStore.Service
 RUN mkdir /source/GeoStore.Tests
+RUN mkdir /source/GeoStore.CosmosDB
 COPY /src/GeoStore.Core/*.csproj GeoStore.Core/.
 COPY /src/GeoStore.Service/*.csproj GeoStore.Service/. 
 COPY /src/GeoStore.Tests/*.csproj GeoStore.Tests/.
+COPY /src/GeoStore.CosmosDB/*.csproj GeoStore.CosmosDB/.
 # verify things are where expected
 #RUN ls -al
 #RUN ls -al pocketnow.lib
