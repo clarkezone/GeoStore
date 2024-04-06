@@ -8,12 +8,12 @@ WORKDIR /source
 # copy csproj and restore as distinct layers
 COPY /src/GeoStore.sln .
 # dest folders aren't created automatically
-RUN mkdir /src/GeoStore.Core
-RUN mkdir GeoStore.Service
-RUN mkdir GeoStore.Tests
-COPY GeoStore.Core/*.csproj GeoStore.Core/.
-COPY GeoStore.Service/*.csproj GeoStore.Service/. 
-COPY GeoStore.Tests/*.csproj GeoStore.Tests/.
+RUN mkdir /source/GeoStore.Core
+RUN mkdir /source/GeoStore.Service
+RUN mkdir /source/GeoStore.Tests
+COPY /src/GeoStore.Core/*.csproj GeoStore.Core/.
+COPY /src/GeoStore.Service/*.csproj GeoStore.Service/. 
+COPY /src/GeoStore.Tests/*.csproj GeoStore.Tests/.
 # verify things are where expected
 #RUN ls -al
 #RUN ls -al pocketnow.lib
