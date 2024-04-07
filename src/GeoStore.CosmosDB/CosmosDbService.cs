@@ -1,3 +1,4 @@
+using GeoStore.Core;
 using Microsoft.Azure.Cosmos;
 using System.Text.Json.Serialization;
 
