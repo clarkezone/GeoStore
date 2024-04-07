@@ -1,4 +1,5 @@
 using GeoStore.Core;
+using GeoStore.CosmosDB;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,19 +24,18 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+var core = new GeoStoreCore();
+core.AddProvider(new CosmosSimpleStorageProvider());
+
+//TODO per provider config
+core.Initialize("username", "password");
+
 app.MapPost("/api/payload", async (HttpRequest request) =>
 {
     Console.WriteLine("Request received\n");
     using var reader = new StreamReader(request.Body);
     var jsonPayload = await reader.ReadToEndAsync();
 
-    //TODO: configure with providers
-    var core = new GeoStoreCore();
-
-    // Ensure the directory exists
-    var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "payloads.txt");
-    //await File.AppendText(filePath, "***);
-    //await File.AppendAllTextAsync(filePath, jsonPayload + Environment.NewLine);
     var rootObject = core.HandlePost(jsonPayload);
 
     return Results.Ok(new { result = "ok" });

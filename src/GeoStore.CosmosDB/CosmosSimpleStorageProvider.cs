@@ -7,7 +7,7 @@ public class Class1
 
 }
 
-public class SimpleStorageProvider : IStorageProvider
+public class CosmosSimpleStorageProvider : IStorageProvider
 {
     private string _name;
 
@@ -24,7 +24,12 @@ public class SimpleStorageProvider : IStorageProvider
         return _name;
     }
 
-    public void WriteRecords(RootObject points)
+    public void WriteRecords(RootObject rootObject)
     {
+    if (rootObject == null) {
+        Console.WriteLine("Can't write records Null");
+    } else {
+        Console.WriteLine($"CosmosSimpleProvider: /{rootObject}");
+    }
     }
 }
