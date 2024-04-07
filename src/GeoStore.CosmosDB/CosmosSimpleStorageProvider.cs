@@ -26,10 +26,13 @@ public class CosmosSimpleStorageProvider : IStorageProvider
 
     public void WriteRecords(RootObject rootObject)
     {
-    if (rootObject == null) {
-        Console.WriteLine("Can't write records Null");
-    } else {
-        Console.WriteLine($"CosmosSimpleProvider: /{rootObject}");
-    }
+        if (rootObject == null)
+        {
+            Console.WriteLine("Can't write records Null");
+        }
+        else
+        {
+            Console.WriteLine($"CosmosSimpleProvider: /{rootObject}");
+        }
     }
 }
