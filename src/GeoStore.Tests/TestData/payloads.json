@@ -1,0 +1,998 @@
+{
+    "locations": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.11782266321981,
+                    47.650458045770122
+                ]
+            },
+            "properties": {
+                "motion": [],
+                "speed": -1,
+                "battery_level": 0.5,
+                "altitude": 41,
+                "battery_state": "unplugged",
+                "horizontal_accuracy": 6,
+                "vertical_accuracy": 14,
+                "timestamp": "2024-04-04T20:50:00Z",
+                "wifi": "Fordyce MKII"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.11782266321981,
+                    47.650458045770122
+                ]
+            },
+            "properties": {
+                "motion": [],
+                "speed": -1,
+                "battery_level": 0.5,
+                "altitude": 40,
+                "battery_state": "unplugged",
+                "horizontal_accuracy": 6,
+                "vertical_accuracy": 14,
+                "timestamp": "2024-04-04T20:52:13Z",
+                "wifi": "Fordyce MKII"
+            }
+        }
+    ]
+}
+***
+{
+    "locations": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.11782266321981,
+                    47.650458045770122
+                ]
+            },
+            "properties": {
+                "motion": [],
+                "speed": -1,
+                "battery_level": 0.5,
+                "altitude": 41,
+                "battery_state": "unplugged",
+                "horizontal_accuracy": 6,
+                "vertical_accuracy": 14,
+                "timestamp": "2024-04-04T20:50:00Z",
+                "wifi": "Fordyce MKII"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.11782266321981,
+                    47.650458045770122
+                ]
+            },
+            "properties": {
+                "motion": [],
+                "speed": -1,
+                "battery_level": 0.5,
+                "altitude": 40,
+                "battery_state": "unplugged",
+                "horizontal_accuracy": 6,
+                "vertical_accuracy": 14,
+                "timestamp": "2024-04-04T20:52:13Z",
+                "wifi": "Fordyce MKII"
+            }
+        }
+    ]
+}
+***
+{
+    "locations": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.11782266321981,
+                    47.650458045770122
+                ]
+            },
+            "properties": {
+                "motion": [],
+                "speed": -1,
+                "battery_level": 0.44999998807907104,
+                "altitude": 41,
+                "battery_state": "unplugged",
+                "horizontal_accuracy": 6,
+                "vertical_accuracy": 21,
+                "timestamp": "2024-04-04T20:57:55Z",
+                "wifi": "Fordyce MKII"
+            }
+        }
+    ]
+}
+***
+{
+    "locations": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34090099411129,
+                    47.622844927900935
+                ]
+            },
+            "properties": {
+                "start": "2024-04-05T15:43:28Z",
+                "timestamp": "2024-04-05T15:43:30Z",
+                "end_location": {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -122.34090099411129,
+                            47.622844927900935
+                        ]
+                    },
+                    "properties": {
+                        "motion": [
+                            "walking"
+                        ],
+                        "speed": -1,
+                        "battery_level": 0.89999997615814209,
+                        "altitude": 19,
+                        "battery_state": "unplugged",
+                        "horizontal_accuracy": 32,
+                        "vertical_accuracy": 2,
+                        "timestamp": "2024-04-05T15:21:42Z",
+                        "wifi": "Fresh_Flours-2.4"
+                    }
+                },
+                "type": "trip",
+                "stopped_automatically": false,
+                "wifi": "Fresh_Flours-2.4",
+                "mode": "walk",
+                "start_location": null,
+                "end": "2024-04-05T15:43:30Z",
+                "duration": 2.1660419702529907,
+                "distance": 0,
+                "device_id": "goof",
+                "steps": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34171502665326,
+                    47.622524669933213
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:43:55Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 9,
+                "pauses": false,
+                "horizontal_accuracy": 15,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 25,
+                "desired_accuracy": -1
+            }
+        }
+    ],
+    "trip": {
+        "distance": 0,
+        "start_location": {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34171502665326,
+                    47.622524669933213
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:43:55Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 9,
+                "pauses": false,
+                "horizontal_accuracy": 15,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 25,
+                "desired_accuracy": -1
+            }
+        },
+        "current_location": {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34171502665326,
+                    47.622524669933213
+                ]
+            },
+            "properties": {
+                "motion": [],
+                "speed": 1,
+                "battery_level": 0.89999997615814209,
+                "wifi": "Fresh_Flours-2.4",
+                "vertical_accuracy": 9,
+                "device_id": "goof",
+                "horizontal_accuracy": 15,
+                "timestamp": "2024-04-05T15:43:55Z",
+                "altitude": 25,
+                "battery_state": "unplugged"
+            }
+        },
+        "mode": "walk",
+        "start": "2024-04-05T15:43:47Z"
+    }
+}
+***
+{
+    "locations": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34167453008564,
+                    47.622554099380949
+                ]
+            },
+            "properties": {
+                "speed": 0,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:43:56Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 9,
+                "pauses": false,
+                "horizontal_accuracy": 15,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 23,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34152322957733,
+                    47.622586635134525
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:43:57Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 9,
+                "pauses": false,
+                "horizontal_accuracy": 15,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 22,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34138960154894,
+                    47.622641951519228
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:43:58Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 15,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 21,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34131383843419,
+                    47.622667918379641
+                ]
+            },
+            "properties": {
+                "speed": 0,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:43:59Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 21,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34122060082829,
+                    47.622717258259136
+                ]
+            },
+            "properties": {
+                "speed": 0,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:44:01Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 21,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34109904265492,
+                    47.622751184846692
+                ]
+            },
+            "properties": {
+                "speed": 0,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:44:02Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 21,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34100297100674,
+                    47.622784131545409
+                ]
+            },
+            "properties": {
+                "speed": 0,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:44:03Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 20,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34096080219322,
+                    47.622794064418699
+                ]
+            },
+            "properties": {
+                "speed": 0,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:44:04Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 20,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34090539384772,
+                    47.622801370684819
+                ]
+            },
+            "properties": {
+                "speed": 0,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:44:05Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 20,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34089283168959,
+                    47.622805842715515
+                ]
+            },
+            "properties": {
+                "speed": 0,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:44:06Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 20,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34091268503546,
+                    47.622828202798878
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:44:08Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34092841781361,
+                    47.622838077864564
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:44:09Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34093787640255,
+                    47.622850900752596
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [],
+                "timestamp": "2024-04-05T15:44:11Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34095668590464,
+                    47.62285421654817
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [
+                    "walking"
+                ],
+                "timestamp": "2024-04-05T15:44:13Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.3409512707787,
+                    47.622873067318686
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [
+                    "walking"
+                ],
+                "timestamp": "2024-04-05T15:44:15Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34095089886218,
+                    47.622884009453742
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [
+                    "walking"
+                ],
+                "timestamp": "2024-04-05T15:44:17Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34096185764307,
+                    47.622877526264254
+                ]
+            },
+            "properties": {
+                "speed": 0,
+                "battery_state": "unplugged",
+                "motion": [
+                    "walking"
+                ],
+                "timestamp": "2024-04-05T15:44:19Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34099219703857,
+                    47.622871422597719
+                ]
+            },
+            "properties": {
+                "speed": 2,
+                "battery_state": "unplugged",
+                "motion": [
+                    "walking"
+                ],
+                "timestamp": "2024-04-05T15:44:21Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34099616536764,
+                    47.62285385482771
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [
+                    "walking"
+                ],
+                "timestamp": "2024-04-05T15:44:23Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34098927700539,
+                    47.622843070101588
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [
+                    "walking"
+                ],
+                "timestamp": "2024-04-05T15:44:24Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34098927700539,
+                    47.622843070101588
+                ]
+            },
+            "properties": {
+                "start": "2024-04-05T15:43:47Z",
+                "timestamp": "2024-04-05T15:44:24Z",
+                "end_location": {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -122.34098927700539,
+                            47.622843070101588
+                        ]
+                    },
+                    "properties": {
+                        "motion": [
+                            "walking"
+                        ],
+                        "speed": 1,
+                        "battery_level": 0.89999997615814209,
+                        "device_id": "goof",
+                        "altitude": 19,
+                        "battery_state": "unplugged",
+                        "horizontal_accuracy": 14,
+                        "vertical_accuracy": 10,
+                        "timestamp": "2024-04-05T15:44:24Z",
+                        "wifi": "Fresh_Flours-2.4"
+                    }
+                },
+                "type": "trip",
+                "stopped_automatically": false,
+                "wifi": "Fresh_Flours-2.4",
+                "mode": "walk",
+                "start_location": {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -122.34171502665326,
+                            47.622524669933213
+                        ]
+                    },
+                    "properties": {
+                        "speed": 1,
+                        "battery_state": "unplugged",
+                        "motion": [],
+                        "timestamp": "2024-04-05T15:43:55Z",
+                        "battery_level": 0.89999997615814209,
+                        "vertical_accuracy": 9,
+                        "pauses": false,
+                        "horizontal_accuracy": 15,
+                        "wifi": "Fresh_Flours-2.4",
+                        "deferred": 0,
+                        "significant_change": 1,
+                        "locations_in_payload": 1,
+                        "activity": "automotive_navigation",
+                        "device_id": "goof",
+                        "altitude": 25,
+                        "desired_accuracy": -1
+                    }
+                },
+                "end": "2024-04-05T15:44:24Z",
+                "duration": 36.947440981864929,
+                "distance": 87.791893894650798,
+                "device_id": "goof",
+                "steps": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.34098374934312,
+                    47.622858082159865
+                ]
+            },
+            "properties": {
+                "speed": 0,
+                "battery_state": "unplugged",
+                "motion": [
+                    "walking"
+                ],
+                "timestamp": "2024-04-05T15:44:26Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.3409837493394,
+                    47.622836659003916
+                ]
+            },
+            "properties": {
+                "speed": 1,
+                "battery_state": "unplugged",
+                "motion": [
+                    "walking"
+                ],
+                "timestamp": "2024-04-05T15:44:28Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 14,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.3409837493401,
+                    47.62284776469275
+                ]
+            },
+            "properties": {
+                "speed": 0,
+                "battery_state": "unplugged",
+                "motion": [
+                    "walking"
+                ],
+                "timestamp": "2024-04-05T15:44:36Z",
+                "battery_level": 0.89999997615814209,
+                "vertical_accuracy": 10,
+                "pauses": false,
+                "horizontal_accuracy": 15,
+                "wifi": "Fresh_Flours-2.4",
+                "deferred": 0,
+                "significant_change": 1,
+                "locations_in_payload": 1,
+                "activity": "automotive_navigation",
+                "device_id": "goof",
+                "altitude": 19,
+                "desired_accuracy": -1
+            }
+        }
+    ]
+}
