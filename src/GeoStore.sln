@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoStore.Tests", "src\GeoStore.Tests\GeoStore.Tests.csproj", "{C49474A9-74AE-4111-B423-66849674405A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoStore.Tests", "GeoStore.Tests\GeoStore.Tests.csproj", "{C49474A9-74AE-4111-B423-66849674405A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoStore.Core", "src\GeoStore.Core\GeoStore.Core.csproj", "{5F9BC5D6-7183-49EA-9FCF-A8684949E0E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoStore.Core", "GeoStore.Core\GeoStore.Core.csproj", "{5F9BC5D6-7183-49EA-9FCF-A8684949E0E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoStore.CosmosDB", "src\GeoStore.CosmosDB\GeoStore.CosmosDB.csproj", "{2102D878-E39B-4617-AFEF-E1F6D044CFB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoStore.CosmosDB", "GeoStore.CosmosDB\GeoStore.CosmosDB.csproj", "{2102D878-E39B-4617-AFEF-E1F6D044CFB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoStore.Service", "src\GeoStore.Service\GeoStore.Service.csproj", "{6A2996E7-71FD-45D4-85F2-9865C2634FAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoStore.Service", "GeoStore.Service\GeoStore.Service.csproj", "{6A2996E7-71FD-45D4-85F2-9865C2634FAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
