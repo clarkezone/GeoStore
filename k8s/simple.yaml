@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: geostore-simple
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geostore-deployment
+  namespace: geostore-simple
+  labels:
+    app: geostore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: geostore
+  template:
+    metadata:
+      labels:
+        app: geostore
+    spec:
+      containers:
+      - name: geostore
+        image: clarkezone/geostore:main
+        ports:
+        - containerPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: geostore-service
+  namespace: geostore-simple
+spec:
+  selector:
+    app: geostore
+  ports:
+    - name: http
+      port: 80
+      targetPort: 5000
+  type: ClusterIP
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: geostore-ingress
+  namespace: geostore-simple
+spec:
+  defaultBackend:
+    service:
+      name: geostore-service
+      port:
+        name: http 
+  ingressClassName: tailscale
+  tls:
+  - hosts:
+    - geostore-dev
