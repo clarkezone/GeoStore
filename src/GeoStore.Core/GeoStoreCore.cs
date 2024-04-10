@@ -22,10 +22,10 @@ public class GeoStoreCore
         return rootObject;
     }
 
-    public void Initialize(string v1, string v2)
+    public async Task InitializeAsync()
     {
         foreach (var provider in StorageProviders) {
-            provider.Initialize(v1, v2);
+            await provider.InitializeAsync();
             Console.WriteLine("Initializing provider: " + provider.GetName());
         }
     }

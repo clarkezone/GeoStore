@@ -2,7 +2,7 @@ namespace GeoStore.Core;
 public interface IStorageProvider
 {
     // Initializes the storage provider with credentials.
-    void Initialize(string username, string password);
+    Task InitializeAsync();
 
     // Returns the name of the storage provider.
     string GetName();

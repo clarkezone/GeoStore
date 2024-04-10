@@ -26,18 +26,18 @@ public class CosmosDbService
 {
     private CosmosClient _cosmosClient;
     private Container? _container;
-    private string? _databaseName;
-    private string? _containerName;
+    private string _databaseName;
+    private string _containerName;
 
-    public CosmosDbService(string connectionString)
+    public CosmosDbService(string accountEndpoint, string authKey, string containerName, string databaseName)
     {
-        _cosmosClient = new CosmosClient(connectionString);
+        _containerName = containerName;
+        _databaseName = databaseName;
+        _cosmosClient = new CosmosClient(accountEndpoint: accountEndpoint, authKeyOrResourceToken: authKey);
     }
 
-    public async Task InitAsync(string databaseName, string containerName)
+    public async Task InitAsync()
     {
-        _databaseName = databaseName;
-        _containerName = containerName;
         await InitializeAsync();
     }
 

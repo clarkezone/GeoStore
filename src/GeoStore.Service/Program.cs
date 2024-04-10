@@ -25,10 +25,20 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 var core = new GeoStoreCore();
-core.AddProvider(new CosmosSimpleStorageProvider());
 
-//TODO per provider config
-core.Initialize("username", "password");
+// Read environment variables
+string? accountEndpoint = Environment.GetEnvironmentVariable("ACCOUNT_ENDPOINT");
+string? authKey = Environment.GetEnvironmentVariable("AUTH_KEY");
+
+// Check if environment variables are set
+if (string.IsNullOrEmpty(accountEndpoint) || string.IsNullOrEmpty(authKey))
+{
+    throw new Exception("Missing necessary environment variables.");
+}
+
+core.AddProvider(new CosmosSimpleStorageProvider(accountEndpoint, "authKey"));
+
+await core.InitializeAsync();
 
 app.MapPost("/api/payload", async (HttpRequest request) =>
 {

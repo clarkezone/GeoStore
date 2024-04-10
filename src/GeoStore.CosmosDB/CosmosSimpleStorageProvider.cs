@@ -2,26 +2,24 @@
 
 using GeoStore.Core;
 
-public class Class1
-{
-
-}
-
 public class CosmosSimpleStorageProvider : IStorageProvider
 {
-    private string _name;
+    CosmosDbService _cosmosDbService;
 
-    public void Initialize(string username, string password)
+    public CosmosSimpleStorageProvider(string accountEndpoint, string authKey)
     {
-        // Here you would initialize your storage provider with the given credentials.
-        // This example simply sets the name to the username for demonstration.
-        _name = username;
+       _cosmosDbService = new CosmosDbService(accountEndpoint, authKey, "CONTAINER", "DATABASE"); 
+    }
+
+    public async Task InitializeAsync()
+    {
+        await _cosmosDbService.InitAsync();
     }
 
     public string GetName()
     {
         // Returns the name of the storage provider.
-        return _name;
+        return "CosmosSimple";
     }
 
     public void WriteRecords(RootObject rootObject)
