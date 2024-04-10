@@ -26,6 +26,17 @@ spec:
         image: clarkezone/geostore:main
         ports:
         - containerPort: 5000
+          env:
+          - name: DBCOSMOSURL
+            valueFrom:
+              configMapKeyRef:
+                name: config-fe
+                key: COSMOSURL
+          - name: DBCOSMOSKEY
+            valueFrom:
+              secretKeyRef:
+                name: cosmoskey
+                key: COSMOSKEY
 
 ---
 apiVersion: v1
