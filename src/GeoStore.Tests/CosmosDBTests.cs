@@ -16,7 +16,6 @@ public class DatabaseFixture : IDisposable
                    accountEndpoint: "https://localhost:8081/",
                    authKeyOrResourceToken: "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw=="
                );
-
     }
 
     public void Dispose()
@@ -45,38 +44,48 @@ public class CosmosDBTests
     [Fact]
     public async Task TestEmulator()
     {
-        Database database = await fixture.client.CreateDatabaseIfNotExistsAsync(
-            id: "cosmicworks",
-            throughput: 400
-        );
-
-        Container container = await database.CreateContainerIfNotExistsAsync(
-            id: "products",
-            partitionKeyPath: "/id"
-        );
-
-        var item = new
+        Database? database = null;
+        try
         {
-            id = "68719518371",
-            name = "Kiama classic surfboard"
-        };
-
-        await container.UpsertItemAsync(item);
-
-        using FeedIterator<Object> feed = container.GetItemQueryIterator<Object>(
-            queryText: "SELECT * FROM products"
-        );
-
-        while (feed.HasMoreResults)
+            database = await fixture.client.CreateDatabaseIfNotExistsAsync(
+                id: "cosmicworks",
+                throughput: 400
+            );
+        }
+        catch (Exception e)
         {
-            FeedResponse<Object> response = await feed.ReadNextAsync();
-            Assert.Equal(1, response.Count);
+            throw new Exception("Please make sure the CosmosDB emulator is running using /scripts/start-cosmosdb-emulator.sh");
         }
 
+        if (database != null)
+        {
+            Container container = await database.CreateContainerIfNotExistsAsync(
+                id: "products",
+                partitionKeyPath: "/id"
+            );
+
+            var item = new
+            {
+                id = "68719518371",
+                name = "Kiama classic surfboard"
+            };
+
+            await container.UpsertItemAsync(item);
+
+            using FeedIterator<Object> feed = container.GetItemQueryIterator<Object>(
+                queryText: "SELECT * FROM products"
+            );
+
+            while (feed.HasMoreResults)
+            {
+                FeedResponse<Object> response = await feed.ReadNextAsync();
+                Assert.Equal(1, response.Count);
+            }
+        }
     }
 
-    [Fact]
-    public async Task TestEnsureDBCollections() {
+    public async Task TestEnsureDBCollections()
+    {
         // Arrange
         var cosmosDbService = new CosmosDbService(fixture.client, "pointstore", "geostore-testdb");
 
