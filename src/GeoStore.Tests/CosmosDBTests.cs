@@ -41,7 +41,7 @@ public class CosmosDBTests
         this.fixture = fixture;
     }
 
-    [Fact]
+    [Fact,]
     public async Task TestEmulator()
     {
         Database? database = null;
@@ -84,15 +84,28 @@ public class CosmosDBTests
         }
     }
 
+    [Fact]
     public async Task TestEnsureDBCollections()
     {
         // Arrange
-        var cosmosDbService = new CosmosDbService(fixture.client, "pointstore", "geostore-testdb");
+        CosmosDbService cosmosDbService = GetDbServiceCheckEmulator("pointstore", "geostore-testdb");
 
         // Act
         await cosmosDbService.InitAsync();
 
         // Assert
         Assert.NotNull(cosmosDbService);
+    }
+
+    private CosmosDbService GetDbServiceCheckEmulator(string containerName, string dbName)
+    {
+        try
+        {
+            return new CosmosDbService(fixture.client, containerName, dbName);
+        }
+        catch (Exception)
+        {
+            throw new Exception("Please make sure the CosmosDB emulator is running using /scripts/start-cosmosdb-emulator.sh");
+        }
     }
 }
