@@ -3,7 +3,7 @@ using GeoStore.Core;
 
 namespace GeoStore.Tests;
 
-public class UnitTest1
+public class SerializationTests
 {
     [Fact]
     public void TestDeserializationOfJsonFragments()

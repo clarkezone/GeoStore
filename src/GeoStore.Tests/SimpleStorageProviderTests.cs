@@ -1,6 +1,8 @@
 using GeoStore.Core;
 using Xunit;
 
+namespace GeoStore.Tests;
+
 public class SimpleStorageProvider : IStorageProvider {
     private string _name = "FOO";
 
@@ -33,7 +35,7 @@ public class SimpleStorageProviderTests
     {
         // Arrange
         var storageProvider = new SimpleStorageProvider();
-        string expectedUsername = "TestUser";
+        string expectedUsername = "FOO";
 
         // Act
         storageProvider.InitializeAsync();
