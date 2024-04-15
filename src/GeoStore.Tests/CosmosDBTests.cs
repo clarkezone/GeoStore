@@ -75,6 +75,7 @@ public class CosmosDBTests
 
     }
 
+    [Fact]
     public async Task TestEnsureDBCollections() {
         // Arrange
         var cosmosDbService = new CosmosDbService(fixture.client, "pointstore", "geostore-testdb");
