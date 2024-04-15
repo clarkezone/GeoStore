@@ -1,15 +1,15 @@
 using GeoStore.Core;
 using Xunit;
 
-public class SimpleStorageProvider : IStorageProvider
-{
-    private string _name;
+public class SimpleStorageProvider : IStorageProvider {
+    private string _name = "FOO";
 
-    public void Initialize(string username, string password)
+    public Task InitializeAsync()
     {
         // Here you would initialize your storage provider with the given credentials.
         // This example simply sets the name to the username for demonstration.
-        _name = username;
+
+        return Task.CompletedTask;
     }
 
     public string GetName()
@@ -36,7 +36,7 @@ public class SimpleStorageProviderTests
         string expectedUsername = "TestUser";
 
         // Act
-        storageProvider.Initialize(expectedUsername, "password");
+        storageProvider.InitializeAsync();
 
         // Assert
         var actualName = storageProvider.GetName();

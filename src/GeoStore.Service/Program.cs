@@ -36,7 +36,7 @@ if (string.IsNullOrEmpty(accountEndpoint) || string.IsNullOrEmpty(authKey))
     throw new Exception("Missing necessary environment variables.");
 }
 
-core.AddProvider(new CosmosSimpleStorageProvider(accountEndpoint, "authKey"));
+core.AddProvider(new CosmosSimpleStorageProvider(accountEndpoint, authKey));
 
 await core.InitializeAsync();
 
