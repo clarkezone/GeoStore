@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GeoStore.Core\GeoStore.Core.csproj" />
+    <ProjectReference Include="..\GeoStore.CosmosDB\GeoStore.CosmosDB.csproj" />
   </ItemGroup>
 
   <ItemGroup>

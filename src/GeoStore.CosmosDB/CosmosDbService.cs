@@ -2,6 +2,8 @@ using GeoStore.Core;
 using Microsoft.Azure.Cosmos;
 using System.Text.Json.Serialization;
 
+namespace GeoStore.CosmosDB;
+
 public class DAOSample // current representation in COSMOSDB
 {
     [JsonPropertyName("id")]
@@ -28,6 +30,14 @@ public class CosmosDbService
     private Container? _container;
     private string _databaseName;
     private string _containerName;
+
+
+    public CosmosDbService(CosmosClient cosmosClient, string containerName, string databaseName)
+    {
+        _containerName = containerName;
+        _databaseName = databaseName;
+        _cosmosClient = cosmosClient;
+    }
 
     public CosmosDbService(string accountEndpoint, string authKey, string containerName, string databaseName)
     {
@@ -80,20 +90,22 @@ public class CosmosDbService
     public async Task AddRootObjectAsync(RootObject rootObject)
     {
         DAOSample ds = new DAOSample();
-        foreach (var l in rootObject.Locations) {
-            foreach (var c in l.Geometry.Coordinates) {
-                
+        foreach (var l in rootObject.Locations)
+        {
+            foreach (var c in l.Geometry.Coordinates)
+            {
+
             }
         }
         //ds.BatteryState = rootObject.Locations
-    //_container.CreateItemAsync
-//        try
-//        {
-//            await _container.CreateItemAsync(rootObject, new PartitionKey(rootObject.Id));
-//        }
-//        catch (CosmosException ex) when (ex.StatusCode == System.Net.HttpStatusCode.Conflict)
-//        {
-//            Console.WriteLine($"An item with the same id already exists: {ex.Message}");
-//        }
+        //_container.CreateItemAsync
+        //        try
+        //        {
+        //            await _container.CreateItemAsync(rootObject, new PartitionKey(rootObject.Id));
+        //        }
+        //        catch (CosmosException ex) when (ex.StatusCode == System.Net.HttpStatusCode.Conflict)
+        //        {
+        //            Console.WriteLine($"An item with the same id already exists: {ex.Message}");
+        //        }
     }
 }

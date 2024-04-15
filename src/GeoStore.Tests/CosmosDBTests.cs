@@ -3,7 +3,7 @@ using System.Text.Json;
 using GeoStore.Core;
 using Xunit;
 using Microsoft.Azure.Cosmos;
-
+using GeoStore.CosmosDB;
 namespace GeoStore.Tests;
 
 
@@ -73,5 +73,16 @@ public class CosmosDBTests
             Assert.Equal(1, response.Count);
         }
 
+    }
+
+    public async Task TestEnsureDBCollections() {
+        // Arrange
+        var cosmosDbService = new CosmosDbService(fixture.client, "pointstore", "geostore-testdb");
+
+        // Act
+        await cosmosDbService.InitAsync();
+
+        // Assert
+        Assert.NotNull(cosmosDbService);
     }
 }
