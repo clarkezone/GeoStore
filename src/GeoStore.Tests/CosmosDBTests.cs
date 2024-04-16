@@ -138,6 +138,9 @@ public class CosmosDBTests
         var rootObjects = jsonFragments.Select(fragment => gs.GetRootObject(fragment)).ToList();
         var daoSample = DAOSample.FromRootObject(rootObjects[1]);
 
-        // Asser 
+        // Assert
+        Assert.NotNull(daoSample);
+        Assert.NotNull(daoSample.Id); //TODO verify all fields in daosample are correct
+        //TODO verify that the datetime is correct and matches the golang implementation 
     }
 }
