@@ -1,4 +1,5 @@
 namespace GeoStore.Core;
+using System.Text.Json.Serialization;
 
 public class RootObject
 {
@@ -24,17 +25,23 @@ public class Properties
     // Common properties
     public List<string>? Motion { get; set; }
     public double? Speed { get; set; }
+    [JsonPropertyName("battery_level")]
     public double? BatteryLevel { get; set; }
     public double Altitude { get; set; }
+
+    [JsonPropertyName("battery_state")]
     public string? BatteryState { get; set; }
+    [JsonPropertyName("horizontal_accuracy")]
     public double HorizontalAccuracy { get; set; }
+    [JsonPropertyName("vertical_accuracy")]
     public double VerticalAccuracy { get; set; }
-    public string? Timestamp { get; set; }
+    public DateTime? Timestamp { get; set; }
     public string? Wifi { get; set; }
 
     // Properties specific to trips or more detailed data
     public string? Start { get; set; }
     public string? End { get; set; }
+    [JsonPropertyName("end_location")]
     public LocationFeature? EndLocation { get; set; }
     public string? Type { get; set; }
     public bool? StoppedAutomatically { get; set; }

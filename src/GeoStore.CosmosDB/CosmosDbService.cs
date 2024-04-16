@@ -20,7 +20,24 @@ public class DAOSample // current representation in COSMOSDB
 
     // Assuming you want these to match JSON properties with the same name as the C# property
     public string BatteryState { get; set; }
-    public string Timestamp { get; set; }
+    public DateTime? Timestamp { get; set; }
+
+    public static DAOSample FromRootObject(RootObject rootObject)
+    {
+        DAOSample ds = new DAOSample();
+        foreach (var l in rootObject.Locations)
+        {
+            ds.ID = Guid.NewGuid().ToString();
+            ds.PartitionID = "1";
+            ds.BatteryLevel = Convert.ToDouble(l.Properties.BatteryLevel);
+            ds.BatteryState = l.Properties.BatteryState;
+            ds.Timestamp = l.Properties.Timestamp;
+            ds.Lat = l.Geometry.Coordinates[0];
+            ds.Lon = l.Geometry.Coordinates[1];
+            ds.Altitude = Convert.ToInt32(l.Properties.Altitude);
+        }
+        return ds;
+    }
 }
 
 

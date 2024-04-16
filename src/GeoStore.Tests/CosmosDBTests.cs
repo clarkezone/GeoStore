@@ -119,4 +119,25 @@ public class CosmosDBTests
             throw new Exception("Please make sure the CosmosDB emulator is running using /scripts/start-cosmosdb-emulator.sh");
         }
     }
+
+    // [Fact(Skip = "disabling until json deserialization is fixed")]
+    [Fact]
+    public void TestGetDAOSample()
+    {
+        var fileName = "TestData//payloads.json"; // The name of your file
+        var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+
+        // Now you can use filePath as the path to your file
+        Assert.True(File.Exists(filePath), "Expected data file not found.");
+
+        var jsonContent = File.ReadAllText(filePath);
+        var jsonFragments = jsonContent.Split(new string[] { "***" }, StringSplitOptions.RemoveEmptyEntries);
+        var gs = new GeoStoreCore();
+
+        // Act
+        var rootObjects = jsonFragments.Select(fragment => gs.GetRootObject(fragment)).ToList();
+        var daoSample = DAOSample.FromRootObject(rootObjects[1]);
+
+        // Asser 
+    }
 }

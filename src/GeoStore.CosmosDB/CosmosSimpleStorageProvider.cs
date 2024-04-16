@@ -1,6 +1,8 @@
 ﻿namespace GeoStore.CosmosDB;
 
 using GeoStore.Core;
+using System.Text.Json.Serialization;
+
 
 public class CosmosSimpleStorageProvider : IStorageProvider
 {
@@ -31,6 +33,7 @@ public class CosmosSimpleStorageProvider : IStorageProvider
         else
         {
             Console.WriteLine($"CosmosSimpleProvider: /{rootObject}");
+            var ds = DAOSample.FromRootObject(rootObject);
         }
     }
 }
