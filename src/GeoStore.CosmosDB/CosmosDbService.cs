@@ -106,23 +106,9 @@ public class CosmosDbService
 
     public async Task AddRootObjectAsync(RootObject rootObject)
     {
-        DAOSample ds = new DAOSample();
-        foreach (var l in rootObject.Locations)
-        {
-            foreach (var c in l.Geometry.Coordinates)
-            {
-
-            }
-        }
-        //ds.BatteryState = rootObject.Locations
-        //_container.CreateItemAsync
-        //        try
-        //        {
-        //            await _container.CreateItemAsync(rootObject, new PartitionKey(rootObject.Id));
-        //        }
-        //        catch (CosmosException ex) when (ex.StatusCode == System.Net.HttpStatusCode.Conflict)
-        //        {
-        //            Console.WriteLine($"An item with the same id already exists: {ex.Message}");
-        //        }
+        //This should return a collection of DAOSample objects
+        DAOSample = DAOSample.FromRootObject(rootObject);
+        //This should be a loop that adds each DAOSample object to the CosmosDB
+        await _cosmosClient.CreateItemAsync(_container, DAOSample);
     }
 }
