@@ -7,7 +7,7 @@ namespace GeoStore.CosmosDB;
 public class DAOSample // current representation in COSMOSDB
 {
     [JsonPropertyName("id")]
-    public string ID { get; set; }
+    public string id { get; set; }
 
     [JsonPropertyName("partitionid")]
     public string PartitionID { get; set; }
@@ -21,13 +21,15 @@ public class DAOSample // current representation in COSMOSDB
     // Assuming you want these to match JSON properties with the same name as the C# property
     public string BatteryState { get; set; }
     public DateTime? Timestamp { get; set; }
+    public string Wifi { get; set; }
 
-    public static DAOSample FromRootObject(RootObject rootObject)
+    public static List<DAOSample> FromRootObject(RootObject rootObject)
     {
-        DAOSample ds = new DAOSample();
+        List<DAOSample> dsl = new List<DAOSample>();
         foreach (var l in rootObject.Locations)
         {
-            ds.ID = Guid.NewGuid().ToString();
+            var ds = new DAOSample();
+            ds.id = Guid.NewGuid().ToString();
             ds.PartitionID = "1";
             ds.BatteryLevel = Convert.ToDouble(l.Properties.BatteryLevel);
             ds.BatteryState = l.Properties.BatteryState;
@@ -35,8 +37,10 @@ public class DAOSample // current representation in COSMOSDB
             ds.Lat = l.Geometry.Coordinates[0];
             ds.Lon = l.Geometry.Coordinates[1];
             ds.Altitude = Convert.ToInt32(l.Properties.Altitude);
+            ds.Wifi = l.Properties.Wifi;
+            dsl.Add(ds);
         }
-        return ds;
+        return dsl;
     }
 }
 
@@ -48,6 +52,10 @@ public class CosmosDbService
     private string _databaseName;
     private string _containerName;
 
+    public Container GetCurrentContainer()
+    {
+        return _container;
+    }
 
     public CosmosDbService(CosmosClient cosmosClient, string containerName, string databaseName)
     {
@@ -107,8 +115,20 @@ public class CosmosDbService
     public async Task AddRootObjectAsync(RootObject rootObject)
     {
         //This should return a collection of DAOSample objects
-        DAOSample = DAOSample.FromRootObject(rootObject);
+        var sampleList = DAOSample.FromRootObject(rootObject);
+
         //This should be a loop that adds each DAOSample object to the CosmosDB
-        await _cosmosClient.CreateItemAsync(_container, DAOSample);
+        foreach (var item in sampleList)
+        {
+            await _container.CreateItemAsync(item);
+        }
+    }
+
+    public async Task ResetContainer()
+    {
+        if (_container != null) {}
+            var resp = await _container.DeleteContainerAsync();
+            _container = null;
+            await CreateContainerIfNotExistsAsync();
     }
 }

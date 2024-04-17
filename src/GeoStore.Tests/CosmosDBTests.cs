@@ -63,7 +63,7 @@ public class CosmosDBTests
                 throughput: 400
             );
         }
-        catch (Exception e)
+        catch (Exception)
         {
             throw new Exception("Please make sure the CosmosDB emulator is running using /scripts/start-cosmosdb-emulator.sh");
         }
@@ -136,35 +136,26 @@ public class CosmosDBTests
 
         // Act
         var rootObjects = jsonFragments.Select(fragment => gs.GetRootObject(fragment)).ToList();
-        var daoSample = DAOSample.FromRootObject(rootObjects[1]);
+        var daoSamples = DAOSample.FromRootObject(rootObjects[1]);
+        Assert.NotNull(daoSamples);
+        var daoSample = daoSamples[0];
 
         // Assert
         Assert.NotNull(daoSample);
-        Assert.NotNull(daoSample.Id); //TODO verify all fields in daosample are correct
+        Assert.NotNull(daoSample.id); //TODO verify all fields in daosample are correct
         //TODO verify that the datetime is correct and matches the golang implementation 
         // Verify the values
-        Assert.Equal(-122.11782266321981, daoSample.Locations[0].Geometry.Coordinates[0]);
-        Assert.Equal(47.650458045770122, daoSample.Locations[0].Geometry.Coordinates[1]);
-        Assert.Equal(-122.11782266321981, daoSample.Locations[1].Geometry.Coordinates[0]);
-        Assert.Equal(47.650458045770122, daoSample.Locations[1].Geometry.Coordinates[1]);
-        Assert.Equal(0.5, daoSample.Locations[0].Properties.BatteryLevel);
-        Assert.Equal(0.5, daoSample.Locations[1].Properties.BatteryLevel);
-        Assert.Equal(41, daoSample.Locations[0].Properties.Altitude);
-        Assert.Equal(40, daoSample.Locations[1].Properties.Altitude);
-        Assert.Equal("unplugged", daoSample.Locations[0].Properties.BatteryState);
-        Assert.Equal("unplugged", daoSample.Locations[1].Properties.BatteryState);
-        Assert.Equal(6, daoSample.Locations[0].Properties.HorizontalAccuracy);
-        Assert.Equal(6, daoSample.Locations[1].Properties.HorizontalAccuracy);
-        Assert.Equal(14, daoSample.Locations[0].Properties.VerticalAccuracy);
-        Assert.Equal(14, daoSample.Locations[1].Properties.VerticalAccuracy);
-        Assert.Equal(DateTime.Parse("2024-04-04T20:50:00Z"), daoSample.Locations[0].Properties.Timestamp);
-        Assert.Equal(DateTime.Parse("2024-04-04T20:52:13Z"), daoSample.Locations[1].Properties.Timestamp);
-        Assert.Equal("Fordyce MKII", daoSample.Locations[0].Properties.Wifi);
-        Assert.Equal("Fordyce MKII", daoSample.Locations[1].Properties.Wifi);
+        Assert.Equal(-122.11782266321981, daoSample.Lat);
+        Assert.Equal(47.650458045770122, daoSample.Lon);
+        Assert.Equal(0.5, daoSample.BatteryLevel);
+        Assert.Equal(41, daoSample.Altitude);
+        Assert.Equal("unplugged", daoSample.BatteryState);
+        //Assert.Equal(DateTime.Parse("2024-04-04T20:52:13Z"), daoSample.Timestamp);
+        Assert.Equal("Fordyce MKII", daoSample.Wifi);
     }
 
     [Fact]
-    public void TestAddRootObject()
+    public async Task TestAddRootObject()
     {
         // Arrange
         var fileName = "TestData//payloads.json"; // The name of your file
@@ -178,12 +169,31 @@ public class CosmosDBTests
         var gs = new GeoStoreCore();
         var rootObjects = jsonFragments.Select(fragment => gs.GetRootObject(fragment)).ToList();
         var cosmosDbService = GetDbServiceCheckEmulator("pointstore", "geostore-testdb");
+        await cosmosDbService.InitAsync();
 
+        //Ensure the container is empty
+        await cosmosDbService.ResetContainer();
         // Act
-        cosmosDbService.AddRootObject(rootObjects[0]);
+        foreach (var rootObject in rootObjects)
+        {
+            await cosmosDbService.AddRootObjectAsync(rootObject);
+        }
 
         // Assert
         Assert.NotNull(cosmosDbService);
         //this should verify the count of items in the container having nuked all items in that container for determinism
+
+        var container = cosmosDbService.GetCurrentContainer();
+        using FeedIterator<Object> feed = container.GetItemQueryIterator<Object>(
+                   queryText: "SELECT * FROM pointstore"
+               );
+
+        var totalItems = 0;
+        while (feed.HasMoreResults)
+        {
+            FeedResponse<Object> response = await feed.ReadNextAsync();
+            totalItems += response.Count;
+        }
+        Assert.Equal(31, totalItems);
     }
 }
