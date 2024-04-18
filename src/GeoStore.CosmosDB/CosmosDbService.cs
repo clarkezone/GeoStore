@@ -66,9 +66,18 @@ public class CosmosDbService
 
     public CosmosDbService(string accountEndpoint, string authKey, string containerName, string databaseName)
     {
+        //TODO: only for testing
+        CosmosClientOptions options = new()
+        {
+            HttpClientFactory = () => new HttpClient(new HttpClientHandler()
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            }),
+            ConnectionMode = ConnectionMode.Gateway,
+        };
         _containerName = containerName;
         _databaseName = databaseName;
-        _cosmosClient = new CosmosClient(accountEndpoint: accountEndpoint, authKeyOrResourceToken: authKey);
+        _cosmosClient = new CosmosClient(accountEndpoint: accountEndpoint, authKeyOrResourceToken: authKey, clientOptions: options);
     }
 
     public async Task InitAsync()

@@ -10,7 +10,8 @@ public class CosmosSimpleStorageProvider : IStorageProvider
 
     public CosmosSimpleStorageProvider(string accountEndpoint, string authKey)
     {
-       _cosmosDbService = new CosmosDbService(accountEndpoint, authKey, "CONTAINER", "DATABASE"); 
+        //TODO read these from the environment
+       _cosmosDbService = new CosmosDbService(accountEndpoint, authKey, "pointstore", "geopointsdb"); 
     }
 
     public async Task InitializeAsync()
@@ -24,7 +25,7 @@ public class CosmosSimpleStorageProvider : IStorageProvider
         return "CosmosSimple";
     }
 
-    public void WriteRecords(RootObject rootObject)
+    public async Task WriteRecords(RootObject rootObject)
     {
         if (rootObject == null)
         {
@@ -34,6 +35,7 @@ public class CosmosSimpleStorageProvider : IStorageProvider
         {
             Console.WriteLine($"CosmosSimpleProvider: /{rootObject}");
             var ds = DAOSample.FromRootObject(rootObject);
+            await _cosmosDbService.AddRootObjectAsync(rootObject);
         }
     }
 }

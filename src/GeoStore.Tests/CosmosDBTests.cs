@@ -4,6 +4,7 @@ using GeoStore.Core;
 using Xunit;
 using Microsoft.Azure.Cosmos;
 using GeoStore.CosmosDB;
+using System.Diagnostics;
 namespace GeoStore.Tests;
 
 
@@ -195,5 +196,29 @@ public class CosmosDBTests
             totalItems += response.Count;
         }
         Assert.Equal(31, totalItems);
+    }
+    
+    [Fact]
+    public async Task QueryProdTest()
+    {
+        var cosmosDbService = GetDbServiceCheckEmulator("pointstore", "geopointsdb");
+        await cosmosDbService.InitAsync();
+
+        // Assert
+        Assert.NotNull(cosmosDbService);
+        //this should verify the count of items in the container having nuked all items in that container for determinism
+
+        var container = cosmosDbService.GetCurrentContainer();
+        using FeedIterator<Object> feed = container.GetItemQueryIterator<Object>(
+                   queryText: "SELECT * FROM pointstore"
+               );
+
+        var totalItems = 0;
+        while (feed.HasMoreResults)
+        {
+            FeedResponse<Object> response = await feed.ReadNextAsync();
+            totalItems += response.Count;
+        }
+        Debug.WriteLine($"Total items: {totalItems}");
     }
 }

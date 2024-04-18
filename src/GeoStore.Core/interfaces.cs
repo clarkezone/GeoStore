@@ -8,5 +8,5 @@ public interface IStorageProvider
     string GetName();
 
     // Writes a collection of points to the storage.
-    void WriteRecords(RootObject points);
+    Task WriteRecords(RootObject points);
 }
