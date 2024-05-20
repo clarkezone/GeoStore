@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geostore-deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: geostore
+        image: clarkezone/geostore:main
+        ports:
+        - containerPort: 5000

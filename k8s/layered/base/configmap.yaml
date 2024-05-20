@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: config-fe
-  namespace: geostore-simple
-data:
-  COSMOSURL: "cosmos-url-placeholder"
-  COSMOS_CONTAINER: "cosmos-container-placeholder"

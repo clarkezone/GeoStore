@@ -1,9 +1,0 @@
-resources:
-- configmap.yaml
-- deployment.yaml
-- service.yaml
-- ingress.yaml
-
-secretGenerator:
-- name: cosmoskey-secret
-  env: .env

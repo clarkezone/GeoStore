@@ -1,5 +1,22 @@
-bases:
+resources:
 - ../../base
 
-patchesStrategicMerge:
-- patch.yaml
+patches:
+- path: patch.yaml
+  target:
+    group: ""
+    version: v1
+    kind: ConfigMap
+    name: config-fe
+- path: patch.yaml
+  target:
+    group: ""
+    version: v1
+    kind: Secret
+    name: cosmoskey-secret
+- path: patch.yaml
+  target:
+    group: networking.k8s.io
+    version: v1
+    kind: Ingress
+    name: geostore-ingress
