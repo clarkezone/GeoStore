@@ -1,0 +1,8 @@
+apiversion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- namespaces/web
+
+components:
+- ../../components/cosmosdb-environment

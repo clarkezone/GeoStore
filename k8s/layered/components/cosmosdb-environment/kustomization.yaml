@@ -1,0 +1,7 @@
+apiversion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+configMapGenerator:
+  - name: service1-env-vars
+    files:
+     - .env
