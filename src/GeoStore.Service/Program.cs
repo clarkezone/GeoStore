@@ -26,6 +26,8 @@ app.UseHttpsRedirection();
 
 var core = new GeoStoreCore();
 
+Console.WriteLine("GeoStore Service started\n");
+
 // Read environment variables
 string? accountEndpoint = Environment.GetEnvironmentVariable("ACCOUNT_ENDPOINT");
 string? authKey = Environment.GetEnvironmentVariable("AUTH_KEY");
