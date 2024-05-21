@@ -64,7 +64,7 @@ public class CosmosDbService
         _cosmosClient = cosmosClient;
     }
 
-    public CosmosDbService(string accountEndpoint, string authKey, string containerName, string databaseName)
+    public CosmosDbService(string accountEndpoint, string authKey, string databaseName, string containerName)
     {
         //TODO: only for testing
         CosmosClientOptions options = new()

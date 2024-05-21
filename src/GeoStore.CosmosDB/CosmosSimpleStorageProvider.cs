@@ -8,10 +8,10 @@ public class CosmosSimpleStorageProvider : IStorageProvider
 {
     CosmosDbService _cosmosDbService;
 
-    public CosmosSimpleStorageProvider(string accountEndpoint, string authKey)
+    public CosmosSimpleStorageProvider(string accountEndpoint, string authKey, string databaseName, string containerName)
     {
         //TODO read these from the environment
-       _cosmosDbService = new CosmosDbService(accountEndpoint, authKey, "pointstore", "geopointsdb"); 
+       _cosmosDbService = new CosmosDbService(accountEndpoint, authKey, databaseName, containerName); 
     }
 
     public async Task InitializeAsync()

@@ -31,14 +31,21 @@ Console.WriteLine("GeoStore Service started\n");
 // Read environment variables
 string? accountEndpoint = Environment.GetEnvironmentVariable("ACCOUNT_ENDPOINT");
 string? authKey = Environment.GetEnvironmentVariable("AUTH_KEY");
+string? databaseName = Environment.GetEnvironmentVariable("DATABASE_NAME");
+string? containerName = Environment.GetEnvironmentVariable("CONTAINER_NAME");
 
 // Check if environment variables are set
-if (string.IsNullOrEmpty(accountEndpoint) || string.IsNullOrEmpty(authKey))
+if (string.IsNullOrEmpty(accountEndpoint) || string.IsNullOrEmpty(authKey)|| string.IsNullOrEmpty(databaseName)|| string.IsNullOrEmpty(containerName))
 {
     throw new Exception("Missing necessary environment variables.");
 }
 
-core.AddProvider(new CosmosSimpleStorageProvider(accountEndpoint, authKey));
+Console.WriteLine($"Account Endpoint: {accountEndpoint}");
+Console.WriteLine($"Auth Key: {authKey}");
+Console.WriteLine($"Database name: {databaseName}");
+Console.WriteLine($"Container name: {containerName}");
+
+core.AddProvider(new CosmosSimpleStorageProvider(accountEndpoint, authKey, databaseName, containerName));
 
 await core.InitializeAsync();
 
