@@ -109,8 +109,9 @@ public class CosmosDbService
     {
         try
         {
+            string partitionId = "/partitionid";
             // Adjust the "/id" partition key path if your model uses a different property for partitioning
-            var containerResponse = await _cosmosClient.GetDatabase(_databaseName).CreateContainerIfNotExistsAsync(_containerName, "/id");
+            var containerResponse = await _cosmosClient.GetDatabase(_databaseName).CreateContainerIfNotExistsAsync(_containerName, partitionKeyPath: partitionId);
             _container = containerResponse.Container;
             Console.WriteLine($"Created Container: {containerResponse.Container.Id}");
         }
