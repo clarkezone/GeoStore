@@ -4,3 +4,4 @@ kind: Kustomization
 namespace: geostore-api-staging
 resources:
 - ../../../../apps/geostoreapi
+- resources/namespace.yaml

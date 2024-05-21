@@ -6,3 +6,12 @@ resources:
 
 components:
 - ../../components/cosmosdb-environment
+
+configMapGenerator:
+  - name: service1-env-vars
+    files:
+     - .env
+
+# TODO: how to re-enable the suffix hash?
+generatorOptions:
+  disableNameSuffixHash: true
