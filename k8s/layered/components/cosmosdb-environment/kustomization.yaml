@@ -16,15 +16,25 @@ patches:
             - configMapRef:
                 name: service1-env-vars
             env:
-            - name: DBCOSMOSURL
+            - name: ACCOUNT_ENDPOINT
               valueFrom:
                 configMapKeyRef:
                   name: service1-env-vars
                   key: DBCOSMOSURL
-            - name: DBCOSMOSKEY
+            - name: AUTH_KEY
               valueFrom:
                 configMapKeyRef:
                   name: service1-env-vars
                   key: DBCOSMOSKEY
+            - name: DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: service1-env-vars
+                  key: DBNAME
+            - name: CONTAINER_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: service1-env-vars
+                  key: CONTAINERNAME
 
 # TODO: how to re-enable the suffix hash?
