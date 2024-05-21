@@ -1,6 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+# can we DRY this namespace in favor of the one in the root of staging?
 namespace: geostore-api-staging
 resources:
 - ../../../../apps/geostoreapi
