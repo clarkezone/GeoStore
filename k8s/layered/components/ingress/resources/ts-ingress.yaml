@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: geostore-ingress
+spec:
+  defaultBackend:
+    service:
+      name: geostore-service
+      port:
+        name: http
+  ingressClassName: tailscale
+  tls:
+  - hosts:
+    - geostore.example.com

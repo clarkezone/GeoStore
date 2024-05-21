@@ -1,0 +1,6 @@
+apiversion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+resources:
+- ./resources/ts-ingress.yaml
+

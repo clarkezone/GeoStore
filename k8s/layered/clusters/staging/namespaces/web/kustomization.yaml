@@ -6,3 +6,27 @@ namespace: geostore-api-staging
 resources:
 - ../../../../apps/geostoreapi
 - resources/namespace.yaml
+
+components:
+- ../../../../components/cosmosdb-environment
+- ../../../../components/ingress
+
+configMapGenerator:
+  - name: service1-env-vars
+    envs:
+     - .env
+
+# TODO: how to re-enable the suffix hash?
+generatorOptions:
+  disableNameSuffixHash: true
+
+
+# TODO: patch the ingress to use the correct hostname
+patches:
+- target:
+    kind: Ingress
+    name: geostore-ingress
+  patch: |-
+    - op: replace
+      path: /spec/tls/0/hosts/0
+      value: geostore-api-staging
