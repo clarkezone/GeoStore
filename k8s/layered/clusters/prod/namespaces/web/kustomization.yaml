@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 # can we DRY this namespace in favor of the one in the root of staging?
-namespace: geostore-api-staging
+namespace: geostore-api-prod
 resources:
 - ../../../../apps/geostoreapi
 - resources/namespace.yaml
@@ -14,7 +14,7 @@ components:
 configMapGenerator:
   - name: service1-env-vars
     envs:
-     - database_staging.env
+     - database_prod.env
 
 # TODO: how to re-enable the suffix hash?
 generatorOptions:
@@ -28,5 +28,5 @@ patches:
     name: geostore-ingress
   patch: |-
     - op: replace
-      path: /spec/tls/0/hosts/0
-      value: geostore-api-staging
+      path: /spec/tls/0/hosts/-1
+      value: geostore-api-prod
