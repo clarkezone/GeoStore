@@ -7,7 +7,7 @@ spec:
     service:
       name: geostore-service
       port:
-        name: http
+        number: 80
   ingressClassName: tailscale
   tls:
   - hosts:

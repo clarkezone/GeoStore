@@ -8,6 +8,6 @@ spec:
     spec:
       containers:
       - name: geostore
-        image: clarkezone/geostore:sha-78a4afb
+        image: clarkezone/geostore:sha-2c64bff
         ports:
         - containerPort: 5000
